@@ -30,7 +30,7 @@
             preload: preload,
             create: create,
             update: update
-      }
+        }
     };
 
     //nessa parte do código são criadas as variáveis
@@ -62,10 +62,19 @@
          });
 
         passarinho.anims.play('fly', true);
+
+        let passaro = {
+            animal: 'passaro',
+            cor: 'vermelho',
+            atividade: 'voando',
+        }
+
+        for (propriedade in passaro) {
+            console.log(propriedade + ': ' + passaro[propriedade]);
+        }
     }
 
     //essa parte da uptade na página para que alguma função (nesse caso o movimento do pássaro) seja executada
-
     function update() { 
 
         //essa primeira parte faz ele se movimentar no eixo X
@@ -106,6 +115,11 @@
 
         if (passarinho.y < 550 && passarinho.cima === false) {
         	passarinho.y += 5;
+        }
+
+        while (passarinho.y < 150) {
+            console.log("Olha como o passarinho está alto!");
+            break;
         }
 
     }
